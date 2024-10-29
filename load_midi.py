@@ -33,7 +33,7 @@ def midi_to_sequence(file, sequence_length=50):
         return None
 
 # Method to add all the interpreted files to a list from multiple directories
-def files_to_data(directories, sequence_length=50, batch_size=500, max_files=500, intermediate_save=True):
+def files_to_data(directories, sequence_length=50, batch_size=None, max_files=None,  intermediate_save=True): #train model with whole music dataset with max_file=none
     data_list = []
     processed_count = 0
 
@@ -41,8 +41,11 @@ def files_to_data(directories, sequence_length=50, batch_size=500, max_files=500
         files = [os.path.join(directory, filename) for filename in os.listdir(directory)]
         print(f"Processing files in directory: {directory}")
 
-        # Limit to max_files if needed
-        if len(files) > max_files:
+        # # Limit to max_files if needed
+        # if len(files) > max_files:
+        #     files = files[:max_files]
+        # Only limit the number of files if max_files is specified
+        if max_files is not None and len(files) > max_files:
             files = files[:max_files]
 
         # Batch processing
@@ -69,10 +72,10 @@ def files_to_data(directories, sequence_length=50, batch_size=500, max_files=500
                 save_data(data_list, intermediate_filename)
                 print(f"Intermediate save completed: {intermediate_filename}")
 
-        # Stop if we reached the maximum number of files to process
-        if processed_count >= max_files:
-            print(f"Reached the maximum limit of {max_files} files. Stopping.")
-            break
+        # # Stop if we reached the maximum number of files to process
+        # if processed_count >= max_files:
+        #     print(f"Reached the maximum limit of {max_files} files. Stopping.")
+        #     break
 
     print("Processing Complete for all directories")
     return data_list

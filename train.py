@@ -34,3 +34,6 @@ def train(model, data, criterion, optimizer, num_epochs=10, batch_size=32):
         
         # Print average loss per epoch
         print(f"Epoch [{epoch + 1}/{num_epochs}], Loss: {epoch_loss / batch_count:.4f}")
+        torch.save(model.state_dict(), 'music_generation_model.pth')
+    print("Model saved successfully as music_generation_model.pth")
+
