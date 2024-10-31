@@ -69,7 +69,7 @@ if __name__ == "__main__":
     start_sequence = np.random.rand(10, 4)  # 10 notes, 4 features (start, end, pitch, velocity)
 
     # Generate a sequence of notes
-    generated_sequence = generate_sequence(model, start_sequence, length=300) #modify for the length of the song
+    generated_sequence = generate_sequence(model, start_sequence, length=5000) #modify for the length of the song
 
     # Save the generated sequence to a MIDI file
     save_to_midi(generated_sequence, output_file="generated_music.mid")
