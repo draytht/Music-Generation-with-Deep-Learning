@@ -5,7 +5,7 @@ def train(model, data, criterion, optimizer, num_epochs=10, batch_size=32):
 
     # devide: use GPU
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    print("Using device: {deveice}")
+    print("Using device: {device}")
     # move model to device (gpu or cpu)
     model.to(device)
     model.train()  # Set the model to training mode

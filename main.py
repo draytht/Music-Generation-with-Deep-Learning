@@ -13,13 +13,13 @@ all_directories = [directory, small_directory]
 # capture data processing starting time
 start_processing_time = time.time()
 
-# # Preprocess data with max file limit
-# data = files_to_data(all_directories, sequence_length=50, batch_size=500, max_files=500, intermediate_save=True)
-# save_data(data, 'combined_results.npy')
-
-# Test the model with full dataset
-data = files_to_data(all_directories, sequence_length=50, batch_size=500, intermediate_save=True)
+# Preprocess data with max file limit
+data = files_to_data(all_directories, sequence_length=50, batch_size=500, max_files=500, intermediate_save=True)
 save_data(data, 'combined_results.npy')
+
+# # Test the model with full dataset
+# data = files_to_data(all_directories, sequence_length=50, batch_size=500, intermediate_save=True)
+# save_data(data, 'combined_results.npy')
 
 # capture data processing end time
 end_processing_time = time.time()
