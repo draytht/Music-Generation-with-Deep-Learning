@@ -16,13 +16,6 @@ The goal of this project is to build a generative model that can "compose" music
 * **Music Analysis:** Music21
 * **Data Handling:** NumPy, Pandas
 
-## 📂 Repository Structure
-```text
-├── data/               # Folder containing raw MIDI files
-├── weights/            # Saved model weights (.h5 or .keras)
-├── output/             # Generated MIDI files
-├── Music_Gen.ipynb     # Main notebook for training and generation
-└── README.md           # Project documentation
 
 Bash
 pip install music21 tensorflow numpy
@@ -52,4 +45,5 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Created by draytht
+
 
